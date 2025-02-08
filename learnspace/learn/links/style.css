@@ -1,0 +1,85 @@
+body {
+    background-color: blueviolet;
+}
+
+/* * HEADER */
+
+header {
+    width: 50%;
+    background-color: aliceblue;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+header h1 {
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    color: blueviolet;
+}
+
+/* * FORMATO GENERAL DE LISTAS */
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    padding-right: 1rem;
+}
+
+/* * NAV MENÚ */
+
+.menu-nav {
+    width: fit-content;
+    background-color: bisque;
+    border-radius: 1rem;
+    display: flex;
+    justify-self: right;
+    padding-right: 2rem;
+    margin-right: 3rem;
+    margin-top: 3rem;
+}
+
+.menu-nav a {
+    text-decoration: none;
+}
+
+.menu-nav a:hover {
+    color: blueviolet;
+    background-color: red;
+}
+
+/* * PAGINATION 1 */
+
+.pagination1 {
+    width: fit-content;
+    background-color: blanchedalmond;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    justify-self: center;
+    margin-top: 3rem;
+}
+
+.pagination1 a {
+    text-decoration: none;
+}
+
+/* * PAGINATION 2 */
+
+.pagination2 {
+    width: fit-content;
+    background-color: cornsilk;
+    padding-right: 2rem;
+    border-radius: 1rem;
+    display: flex;
+    margin-left: 20rem;
+    margin-top: 3rem;
+}
+
+.pagination2 a {
+    text-decoration: none;
+}
+

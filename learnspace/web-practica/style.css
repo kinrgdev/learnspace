@@ -1,0 +1,144 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+:root {
+    --color-body: rgb(53, 53, 53);
+    --color-grid: rgba(0, 0, 0);
+    --color-gap: rgba(49, 49, 49, 0.541);
+    --color-font: rgb(255, 255, 255);
+    --color-link: rgb(241, 215, 215);
+    --color-visited: rgb(56, 56, 245);
+    --color-hover: rgb(214, 114, 54);
+    --color-active: rgb(225, 198, 43);
+}
+
+body {
+    margin: 0; /*! Elimina el margen por defecto de los navegadores */
+    padding: 0;  /*! Elimina el padding por defecto de los navegadores */
+    background-color: var(--color-body);
+}
+
+/* CONTAINER - HEADER - INDEX - CONTENIDO - FOOTER */
+
+h1 {
+    color: var(--color-font);
+    text-align: center;
+}
+
+h2 {
+    color: var(--color-font);
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    
+}
+
+p {
+    color: var(--color-font);
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+a {
+    color: var(--color-font);
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    transition: 0.8s ease;
+}
+
+a:link {
+    color: var(--color-link);
+}
+
+a:visited {
+    color: var(--color-visited);
+}
+
+a:hover {
+    color: var(--color-hover);
+    text-decoration: underline;
+    font-size: 1.1rem;
+}
+
+a:active{
+    color: var(--color-active);
+}
+
+.container {
+    width: 99%;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-areas:
+    "header header"
+    "index contenido"
+    "footer footer"
+    ;
+    gap: 1rem;
+    background-color: var(--color-gap);
+    margin: 0 auto;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    box-sizing: border-box;
+}
+
+.container > div {
+    background-color: var(--color-grid);
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container > div.header {
+    grid-area: header;
+    width: 60%;
+    height: 2rem;
+    margin: 0 auto;
+    border-radius: 1rem 1rem 1rem 1rem;
+
+}
+
+.container > aside.index {
+    grid-area: index;
+    width: 80%;
+    height: fit-content;
+    background-color: var(--color-grid);
+    margin-left: 2rem;
+    border-radius: 1rem 1rem 1rem 1rem;
+    padding: 1.2rem;
+    
+    /* *TODO
+    /*! Si el contenido del index se come el footer por cantidad del mismo, comentar las tres siguientes líneas
+    /* Hacer flotar el index
+    position: -webkit-sticky; /* * posición pegada para Safari
+    position: sticky; /* * posición pegada
+    top: 1rem; /* * permite que el index se quede pegado al top, sin esto, el navegador no sabe cuando pega
+    */ 
+    
+}
+
+ol {
+    border: ridge 0.4rem var(--color-body);
+    padding: 1.2rem;
+}
+
+li {
+    list-style-type: square;
+    color: aliceblue;
+    margin: 0.5rem;
+}
+
+.container > article.contenido {
+    grid-area: contenido;
+    margin-right: 4rem;
+    height: fit-content;
+    background-color: var(--color-grid);
+    border-radius: 1rem 1rem 1rem 1rem;
+}
+
+.container > div.footer {
+    grid-area: footer;
+    width: 60%;
+    height: 2rem;
+    margin: 0 auto;
+    border-radius: 1rem 1rem 1rem 1rem;
+    margin-top: 30rem;
+}

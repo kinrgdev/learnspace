@@ -1,0 +1,108 @@
+:root { /*"Raíz" Declarar pseudo-clase universal*/
+  --color-body: rgba(30, 30, 30, 0.893);
+  --color-grid: rgba(255, 255, 255, 0.8);
+  --color-gap: rgba(0, 132, 255, 0.7);
+  --color-title: rgb(101, 76, 76);
+  --color-font: rgb(23, 23, 23);
+  --color-hover: rgb(132, 32, 132);
+  --color-active: rgb(132, 132, 32);
+  --color-visited: rgba(243, 49, 49, 0.462);
+
+}
+
+/*contenedor principal del contenido visible en la página */
+
+body {
+  background-color: var(--color-body);
+}
+
+/* * DECLARACIÓN DEL GRID */
+
+.container-menu {
+    display: grid; /*! Display tipo grid */
+    grid-template-areas: /*! Declaramos las áreas  */
+    "header"
+    "menu"
+    "footer"
+    ;
+    grid-template-columns: 3fr; /*! Declaramos el tamaño de las columnas  */
+    gap: 10px; /*! Separación entre columnas  */
+    background-color: var(--color-gap); /*! Color del gap*/
+    padding: 5px; /*! ancho del gap */
+    width: 75%; /*! Ancho del grid */
+    margin: 0 auto; /*! Centrado del grid */
+    margin-top: 50px; /*! Margen superior */
+  }
+  
+  /* * PERSONALIZACIÓN DEL GRID */
+  .container-menu > div {
+    background-color: var(--color-grid); /*! Color de fondo */
+    padding: 10px; /*! Espaciado interno */
+    display: flex; /*! Display tipo flex */
+    justify-content: center; /*! Alineación horizontal */
+  }
+
+  /* * DECLARACIÓN DEL ÁREA HEADER */
+  .container-menu > div.header {
+    grid-area: header; /*! Establece el área */
+    color: var(--color-title); /*! Color del texto */
+    text-align: center; /*! Alineación del texto */
+    
+  }
+  /* * DECLARACIÓN DEL ÁREA MENU */
+  .container-menu > div.menu {
+    grid-area: menu;/*! Establece el área */
+    display: inline-block; /*! Display tipo bloque en línea */
+    color: var(--color-title); /*! Color del texto */
+    text-align: center; /*! Alineación del texto */
+    
+  }
+  /* * EDICIÓN DE LAS IMÁGENES */
+  .container-menu > div.menu a > .logo {
+    width: 10rem; /*! Ancho de la imagen */
+    height: 10rem; /*! Alto de la imagen */
+    margin-bottom: 20px; /*! Margen inferior */
+    transition: transform 0.5s ease; /*! Transición suave con aceleración y desaceleración */
+    transform-origin: center; /*! Origen de la transformación. Center por defecto */
+  }
+  
+/* * ANIMACIÓN DE LAS IMAGENES EN HOVER */
+
+
+            /*? INICIO DE LA ANIMACIÓN */
+  .container-menu > div.menu a:hover > .logo {
+    animation: hoverOn 0.5s forwards; /*! Animación de 0.5s > selector-variable-tiempo-comportamiento */
+    padding: 3rem; /*! Espaciado interno */
+  }
+            /*? FIN DE LA ANIMACIÓN */
+  .container-menu > div.menu a > .logo {
+    animation: hoverOff 0.5s forwards; /*! Animación de 0.5s > selector-variable-tiempo-comportamiento */
+    padding: 3rem; /*! Espaciado interno */
+  }
+            /*? ANIMACIÓN DEL INICIO DE LA TRANSFORMACIÓN */
+  @keyframes hoverOn {
+    0% { /*! Inicio de la animación */
+      transform: scale(1) rotate(0deg); /*! Escala y rotación sin hover */
+    }
+    100% { /*! Fin de la animación */
+      transform: scale(1.2) rotate(360deg); /*! Escala y rotación al hacer hover */
+    }
+  }
+            /*? FIN DE LA ANIMACIÓN DE TRANSFORMACIÓN */
+  @keyframes hoverOff {
+    0% {
+      transform: scale(1.2) rotate(0deg); /*! Escala y rotación en el hover */
+    }
+    100% {
+      transform: scale(1) rotate(0deg); /*! Escala y rotación al dejar de hacer hover */
+    }
+  }
+/* * DECLARACIÓN DEL ÁREA FOOTER */
+  .container-menu > div.footer {
+    grid-area: footer;
+  }
+/* * PERSONALIZACIÓN DEL FOOTER */
+  .container-menu > div.footer > div.text-footer > p {
+    flex-direction: column;
+    text-align: center;
+  }
