@@ -1,0 +1,27 @@
+img{
+    display: block;
+    width: 50%;
+}
+
+li a:hover{
+    background-color: blueviolet;
+    color: blue;
+}
+
+header h1{
+    text-align: center;
+    color: cadetblue;
+    padding: 10px;
+}
+
+article>p{
+    background-color: chocolate;
+}
+
+img+p{
+    color: darkmagenta;
+}
+
+#articulos + article{
+    border: 10px ridge red;
+}
