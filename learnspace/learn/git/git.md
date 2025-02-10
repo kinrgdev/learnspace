@@ -1,11 +1,11 @@
+-
+
+
 Crear repositorio en Github y sincronizarlo:
 
+-
 
-
-
-Clonar repositorio
-
-Terminal:
+Clonar repositorio:
 
 - Navegamos hasta la carpeta donde queremos clonar en Terminal.
 - Copiamos la url del repositorio de GitHub.
