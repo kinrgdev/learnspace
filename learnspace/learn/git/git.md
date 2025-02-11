@@ -57,10 +57,19 @@ touch README.md
 git add README.md
 git commit -m "Primer commit"
 git remote add origin https://github.com/TuUsuario/MiProyecto.git
+git pull origin main
 
 # (debe coincidir repositorio y enlace)
 
 git push -u origin main
+
+# Sí hay cambios externos como en la web de GitHub u otro usuario en VSCODE:
+
+git pull origin main
+
+# Después (para actualizar el local):
+
+git push origin main
 
 # ------------------- Clonar repositorio -----------------------------:
 
