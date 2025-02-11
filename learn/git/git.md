@@ -55,8 +55,9 @@ git init
 
 # (o cualquier otro archivo se que quiera agregar)
 git add .
+# saldrán muchos warning si hay archivos
+echo "# learnspace" > README.md
 git commit -m "Primer commit"
-git remote add origin https://github.com/TuUsuario/MiProyecto.git
 git pull origin main
 
 # (debe coincidir repositorio y enlace)
