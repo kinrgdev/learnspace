@@ -117,6 +117,9 @@ git push origin main --force
 * Confirmar rama
 git branch
 
+* Confirmar repositorio
+git remote -v
+
 * Si no se está en main (o en otra)
 git checkout main
 
