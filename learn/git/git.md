@@ -37,11 +37,13 @@ git config --global user.email "email"
 
 # ------------------- Crear repositorio en Github desde Terminal -----------------------------:
 
-gh repo create TuRepositorio --public --source=. --push --readme
+gh repo create learnspace --public --source=. --push --add-readme
+
 
 ó
 
-gh repo create TuRepositorio --private --source=. --push --readme
+gh repo create learnspace --private --source=. --push --add-readme
+
 
 (Se inicializa sola)
 
@@ -50,11 +52,9 @@ gh repo create TuRepositorio --private --source=. --push --readme
 - Se crea la carpeta, se abre en VSCODE:
 
 git init
-touch README.md
 
 # (o cualquier otro archivo se que quiera agregar)
-
-git add README.md
+git add .
 git commit -m "Primer commit"
 git remote add origin https://github.com/TuUsuario/MiProyecto.git
 git pull origin main
