@@ -1,21 +1,99 @@
--
+# - ------------------- Instalar Git -----------------------------:
+
+- Descargarlo: https://git-scm.com/downloads/win
+- Instalar
+ git --version
+
+# - ------------------- Instalar GitCli -----------------------------:
+
+- En Powershell o CMD:
+winget install --id GitHub.cli
+- Marcar Y
+- Copiar path del archivo
+- Abrir el menú de Variables de Entorno:
+- Presiona Win + R, escribe sysdm.cpl y pulsa Enter.
+- Ve a la pestaña Opciones avanzadas y haz clic en Variables de entorno.
+- Editar la variable Path:
+- En la sección Variables del sistema, busca Path y haz clic en Editar.
+- Pulsa Nuevo y añade la ruta donde está instalado gh.
+- Pulsa Aceptar en todas las ventanas.
+- Cierra y vuelve a abrir PowerShell o CMD
+
+gh --version
+
+# - ------------------- Loguearse -----------------------------:
+
+gh auth login
+* elegir la opción 
+
+git config --global user.name "nombre de usuario"
+git config --global user.email "email"
 
 
-Crear repositorio en Github y sincronizarlo:
+- O a través de la interfaz de VSCODE en Accounts
 
--H
+- Verificar:
+git config --global --list
 
-Clonar repositorio:
+# ------------------- Crear repositorio en Github desde Terminal -----------------------------:
 
-- Navegamos hasta la carpeta donde queremos clonar en Terminal.
+gh repo create TuRepositorio --public --source=. --push --readme
+
+ó
+
+gh repo create TuRepositorio --private --source=. --push --readme
+
+(Se inicializa sola)
+
+# ------------------- Carpeta local a repositorio Git -----------------------------:
+
+- Se crea la carpeta, se abre en VSCODE:
+
+git init
+touch README.md  
+# (o cualquier otro archivo se que quiera agregar)
+git add README.md
+git commit -m "Primer commit"
+git remote add origin https://github.com/TuUsuario/MiProyecto.git 
+# (debe coincidir repositorio y enlace)
+git push -u origin main
+
+# ------------------- Clonar repositorio -----------------------------:
+
+- Navegamos hasta la carpeta donde queremos o con la nativa de Clonar de VSCODE.
 - Copiamos la url del repositorio de GitHub.
 - Escribimos: git clone https://...
+- Navegar a la carpeta:
+cd Repositorio
+git status
+git add .
+# git add archivo_resuelto.txt 
+# git commit -m "Conflictos resueltos"
+git commit -m "descripción del commit"
+git pull origin main
+git push origin main
 
-* Si no estamos logueados en VSCODE:
-- git config --global user.name "nombre de usuario"
-- git config --global user.email "email"
 
-- Para añadir archivos: git add .
-- Commit: git commit -m "descripción del commit"
 - Subir cambios: git push origin [nombre de la rama]
 - Obtener las últimas actualizaciones del repositorio: git pull origin [nombre de la rama]
+
+
+ # ---------------- Descargar los cambios si el remoto tiene cambios que el equipo local no tiene --------------------------:
+  
+# (Updates were rejected because the remote contains work that you do not have locally)
+
+ git pull origin main --rebase
+
+# Si Git detecta conflictos, revisa los archivos afectados, edítalos manualmente y luego ejecuta:
+
+ git add .
+ git rebase --continue
+
+- Empujar cambios
+
+ git push origin main
+
+- Y sino (sobreescribe los cambios remotos)
+
+ git push origin main --force
+
