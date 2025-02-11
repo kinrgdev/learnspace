@@ -1,2 +1,0 @@
-# learnspace
-Repositorio de aprendizaje
